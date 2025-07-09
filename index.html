@@ -1,107 +1,109 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Salut Barcelona - La Teva Salut, La Nostra Prioritat</title>
+    <meta name="description" content="Bmedik - Lloguer de consultoris mèdics moderns i equipats a Sant Just Desvern. Flexibilitat per a professionals de la salut.">
+    <meta name="keywords" content="consultoris mèdics, lloguer, Sant Just Desvern, Barcelona, professionals salut, espais mèdics, Bmedik">
+    <meta property="og:title" content="Bmedik - El teu espai mèdic, sense complicacions">
+    <meta property="og:description" content="Lloguer de consultoris mèdics moderns i equipats a Sant Just Desvern. Flexibilitat per a professionals de la salut.">
+    <meta property="og:image" content="https://www.yourwebsite.com/content/seccionInicio.png"> <!-- Replace with actual image URL -->
+    <meta property="og:url" content="https://www.yourwebsite.com"> <!-- Replace with actual website URL -->
+    <meta property="og:type" content="website">
+    <title>Bmedik - Centre Clínic</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
 <body>
-
-    <header class="main-header">
-        <nav class="main-nav">
-            <div class="nav-logo">
-                <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 0C8.954 0 0 8.954 0 20C0 31.046 8.954 40 20 40C31.046 40 40 31.046 40 20C40 8.954 31.046 0 20 0ZM20 36C11.178 36 4 28.822 4 20C4 11.178 11.178 4 20 4C28.822 4 36 11.178 36 20C36 28.822 28.822 36 20 36Z" fill="currentColor"/>
-                    <path d="M20 10V20H30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                <img src="content/logo.png" alt="Bmedik Logo" loading="lazy">
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <ul class="nav-links">
-                <li><a href="#inici" class="nav-link active">Inici</a></li>
-                <li><a href="#serveis" class="nav-link">Serveis</a></li>
-                <li><a href="#sobre-nosaltres" class="nav-link">Sobre Nosaltres</a></li>
-                <li><a href="#contacte" class="nav-link">Contacte</a></li>
+                <li><a href="#proposal">Proposta</a></li>
+                <li><a href="#location">Ubicació</a></li>
+                <li><a href="#contact">Contacte</a></li>
             </ul>
-            <a href="#contacte" class="cta-button">Demana Cita</a>
         </nav>
     </header>
 
     <main>
-        <section id="inici" class="hero-section">
+        <section id="hero">
+            <video autoplay muted loop playsinline poster="content/seccionInicio.png" id="hero-video">
+                <source src="content/videoIntroduccion.mp4" type="video/mp4">
+            </video>
             <div class="hero-content">
-                <h1>La Teva Salut, La Nostra Prioritat</h1>
-                <p>Un equip de professionals dedicats a cuidar de tu i la teva família a Barcelona.</p>
-                <a href="#serveis" class="hero-button">Descobreix Més</a>
+                <h1>El teu espai mèdic, sense complicacions</h1>
+                <p>Lloguer de consultoris moderns i equipats per a professionals de la salut.</p>
+                <a href="#contact" class="btn">Comença Ara</a>
             </div>
         </section>
 
-        <section id="serveis" class="content-section">
-            <h2>Els Nostres Serveis Mèdics</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i data-feather="heart"></i>
-                    <h3>Medicina General</h3>
-                    <p>Atenció primària integral per a totes les edats, revisions i seguiment de patologies.</p>
+        <div class="main-content">
+            <section id="proposal" class="container">
+                <h2 class="section-title">La Nostra Proposta</h2>
+                <div class="grid-2">
+                    <div>
+                        <img src="content/espaciosVentajas.png" alt="Consultori modern i equipat">
+                    </div>
+                    <div>
+                        <h3>Tot el que necessites, en un sol lloc</h3>
+                        <p>A Bmedik, ens encarreguem de tot perquè tu et puguis centrar en el més important: els teus pacients. La nostra proposta inclou:</p>
+                        <ul>
+                            <li>Consultoris privats, moderns i equipats.</li>
+                            <li>Flexibilitat total: lloga per hores, dies o mesos.</li>
+                            <li>Serveis inclosos: recepció, neteja i gestió de l'agenda.</li>
+                            <li>Ubicació cèntrica amb excel·lents comunicacions.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i data-feather="users"></i>
-                    <h3>Pediatria</h3>
-                    <p>Cuidem de la salut dels més petits amb un tracte proper i especialitzat.</p>
-                </div>
-                <div class="service-card">
-                    <i data-feather="activity"></i>
-                    <h3>Fisioteràpia</h3>
-                    <p>Recuperació de lesions i millora del benestar físic amb tècniques avançades.</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="sobre-nosaltres" class="content-section">
-            <h2>Sobre Nosaltres</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" alt="Doctora somrient amb un ordinador portàtil">
+            <section id="location" class="container">
+                <h2 class="section-title">On Som</h2>
+                <div class="location-info">
+                    <p>Ens trobaràs en una ubicació privilegiada, perfectament comunicada amb transport públic.</p>
+                    <p class="address">Carrer de Carolina Catasús i Bosch, 7, 08960 Sant Just Desvern</p>
+                    <div id="map"></div>
                 </div>
-                <div class="about-text">
-                    <h3>Compromesos amb el Teu Benestar</h3>
-                    <p>La nostra clínica, situada al cor de Barcelona, va ser fundada amb la missió d'oferir una atenció mèdica accessible, humana i de la màxima qualitat. Comptem amb un equip de metges i especialistes amb una àmplia experiència, units per la vocació de servei i el compromís amb la salut dels nostres pacients.</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="contacte" class="content-section">
-            <h2>Contacta o Demana Cita</h2>
-            <div class="contact-form-container">
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="nom">Nom Complert</label>
-                        <input type="text" id="nom" name="nom" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correu Electrònic</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="missatge">Motiu de la consulta</label>
-                        <textarea id="missatge" name="missatge" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Envia Sol·licitud</button>
-                </form>
-            </div>
-        </section>
+            <section id="contact">
+                <div class="container">
+                    <h2>Contacta amb Nosaltres</h2>
+                    <p>Tens algun dubte? Omple el formulari i et respondrem el més aviat possible.</p>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correu electrònic</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Missatge</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Missatge</button>
+                    </form>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <footer class="main-footer-content">
-        <p>&copy; 2025 Clínica Salut Barcelona. Tots els drets reservats.</p>
+    <footer>
+        <p>&copy; 2025 Bmedik</p>
     </footer>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="script.js"></script>
-    <script>
-      feather.replace()
-    </script>
+    <button class="back-to-top">&#9650;</button>
 </body>
 </html>
