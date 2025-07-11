@@ -3,14 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bmedik - Lloguer de consultoris mèdics moderns i equipats a Sant Just Desvern. Flexibilitat per a professionals de la salut.">
-    <meta name="keywords" content="consultoris mèdics, lloguer, Sant Just Desvern, Barcelona, professionals salut, espais mèdics, Bmedik">
-    <meta property="og:title" content="Bmedik - El teu espai mèdic, sense complicacions">
-    <meta property="og:description" content="Lloguer de consultoris mèdics moderns i equipats a Sant Just Desvern. Flexibilitat per a professionals de la salut.">
-    <meta property="og:image" content="https://www.yourwebsite.com/content/seccionInicio.png"> <!-- Replace with actual image URL -->
-    <meta property="og:url" content="https://www.yourwebsite.com"> <!-- Replace with actual website URL -->
+
+    <!-- SEO Meta Tags -->
+    <title>BMEDIK: Alquiler de Consultorios Médicos en Esplugues de Llobregat</title>
+    <meta name="description" content="Alquiler de consultorios y despachos médicos totalmente equipados en Esplugues de Llobregat. Flexibilidad por horas o alquiler fijo. ¡Contacta ahora!">
+    <meta name="keywords" content="alquiler consultorio médico, alquiler despacho médico, centro médico esplugues, coworking médico barcelona, bmedik, esplugues de llobregat, baix llobregat">
+    <meta name="author" content="BMEDIK">
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <title>Bmedik - Centre Clínic</title>
+    <meta property="og:url" content="https://www.bmedik.com/">
+    <meta property="og:title" content="BMEDIK: Alquiler de Consultorios Médicos en Esplugues de Llobregat">
+    <meta property="og:description" content="Alquiler de consultorios y despachos médicos totalmente equipados en Esplugues de Llobregat. Flexibilidad por horas o alquiler fijo. ¡Contacta ahora!">
+    <meta property="og:image" content="https://www.bmedik.com/content/seccionInicio.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bmedik.com/">
+    <meta property="twitter:title" content="BMEDIK: Alquiler de Consultorios Médicos en Esplugues de Llobregat">
+    <meta property="twitter:description" content="Alquiler de consultorios y despachos médicos totalmente equipados en Esplugues de Llobregat. Flexibilidad por horas o alquiler fijo. ¡Contacta ahora!">
+    <meta property="twitter:image" content="https://www.bmedik.com/content/seccionInicio.png">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "BMEDIK",
+      "description": "Centro de alquiler de consultorios y despachos para profesionales médicos en Esplugues de Llobregat.",
+      "telephone": "+34691392308",
+      "url": "https://www.bmedik.com",
+      "logo": "https://www.bmedik.com/content/logo.png",
+      "image": "https://www.bmedik.com/content/seccionInicio.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Carrer Josep Campreciós, 12-14",
+        "addressLocality": "Esplugues de Llobregat",
+        "postalCode": "08950",
+        "addressRegion": "Barcelona",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "41.3745",
+        "longitude": "2.0805"
+      },
+      "openingHours": "Mo,Tu,We,Th,Fr 09:00-20:00", // Example: Monday-Friday 9am-8pm. Adjust if needed.
+      "priceRange": "€€" // Example price range. Can be adjusted or removed.
+    }
+    </script>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 </head>
@@ -18,7 +60,7 @@
     <header>
         <nav class="container">
             <a href="#" class="logo">
-                <img src="content/logo.png" alt="Bmedik Logo" loading="lazy">
+                <img src="content/logo.png" alt="Logo de BMEDIK - Centro Médico en Esplugues de Llobregat" loading="lazy">
             </a>
             <button class="hamburger" aria-label="Toggle navigation menu">
                 <span class="bar"></span>
@@ -26,9 +68,9 @@
                 <span class="bar"></span>
             </button>
             <ul class="nav-links">
-                <li><a href="#proposal">Proposta</a></li>
-                <li><a href="#location">Ubicació</a></li>
-                <li><a href="#contact">Contacte</a></li>
+                <li><a href="#proposal">Propuesta</a></li>
+                <li><a href="#location">Ubicación</a></li>
+                <li><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -39,60 +81,66 @@
                 <source src="content/videoIntroduccion.mp4" type="video/mp4">
             </video>
             <div class="hero-content">
-                <h1>El teu espai mèdic, sense complicacions</h1>
-                <p>Lloguer de consultoris moderns i equipats per a professionals de la salut.</p>
-                <a href="#contact" class="btn">Comença Ara</a>
+                <h1>Centro Médico BMEDIK</h1>
+                <p>La solución para el Profesional Médico que necesita un lugar para crear su propio consultorio.</p>
+                <a href="#contact" class="btn">Contacta</a>
             </div>
         </section>
 
         <div class="main-content">
             <section id="proposal" class="container">
-                <h2 class="section-title">La Nostra Proposta</h2>
+                <h2 class="section-title">Nuestra Propuesta</h2>
                 <div class="grid-2">
                     <div>
-                        <img src="content/espaciosVentajas.png" alt="Consultori modern i equipat">
+                        <img src="content/espaciosVentajas.png" alt="Consultorio médico moderno y equipado en BMEDIK">
                     </div>
                     <div>
-                        <h3>Tot el que necessites, en un sol lloc</h3>
-                        <p>A Bmedik, ens encarreguem de tot perquè tu et puguis centrar en el més important: els teus pacients. La nostra proposta inclou:</p>
+                        <h3>Todo lo que necesitas, en un solo lugar</h3>
+                        <p>En BMEDIK, nos encargamos de todo para que tú te puedas centrar en lo más importante: tus pacientes. Nuestra propuesta incluye:</p>
                         <ul>
-                            <li>Consultoris privats, moderns i equipats.</li>
-                            <li>Flexibilitat total: lloga per hores, dies o mesos.</li>
-                            <li>Serveis inclosos: recepció, neteja i gestió de l'agenda.</li>
-                            <li>Ubicació cèntrica amb excel·lents comunicacions.</li>
+                            <li>Consultorios privados, modernos y equipados de varias superficies.</li>
+                            <li>Flexibilidad total: alquiler fijo o por franjas horarias.</li>
+                            <li>Servicios incluidos: recepción, agenda, suministros y limpieza diaria.</li>
+                            <li>Agradables zonas de espera y un espacio de descanso con comedor y office.</li>
+                            <li>Sinergias con otros profesionales y laboratorio de análisis.</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             <section id="location" class="container">
-                <h2 class="section-title">On Som</h2>
+                <h2 class="section-title">¿Por qué Esplugues de Llobregat?</h2>
                 <div class="location-info">
-                    <p>Ens trobaràs en una ubicació privilegiada, perfectament comunicada amb transport públic.</p>
-                    <p class="address">Carrer de Carolina Catasús i Bosch, 7, 08960 Sant Just Desvern</p>
+                    <p>Con casi 50.000 habitantes, tiene una situación privilegiada ya que es colindante con Barcelona, por lo que tiene todas sus ventajas y a la vez es la zona de paso para las poblaciones de Sant Just Desvern, Sant Joan Despi, Cornellà de Llobregat…</p>
+                    <p>La ubicación de nuestro local de más de 500 metros cuadrados es la más céntrica posible, al lado del centro cultural, enfrente de Correos, con fachada a dos calles.</p>
+                    <p class="address">Josep Campreciós, 12-14 y Mossen Jacint Verdaguer, 46-48 (semi-peatonal).</p>
+                    <p>La comunicación es inmejorable, al estar situado entre la carretera N-340 y la Avenida de Cornellà, y a escasos metros de estas dos arterias de circulación donde tienen parada todos los autobuses de la población, tanto los que conectan con Barcelona como los que van a todas las poblaciones del Baix Llobregat. También hay parada de Tram (tranvía) a 200 metros del local, donde paran todos los tranvías que van a las poblaciones que este cubre.</p>
                     <div id="map"></div>
                 </div>
             </section>
 
             <section id="contact">
                 <div class="container">
-                    <h2>Contacta amb Nosaltres</h2>
-                    <p>Tens algun dubte? Omple el formulari i et respondrem el més aviat possible.</p>
-                    <form id="contact-form">
+                    <h2>Contacta con Nosotros</h2>
+                    <p>¿Tienes alguna duda? Rellena el formulario y te responderemos lo antes posible.</p>
+                    <form id="contact-form" action="send_email.php" method="post">
                         <div class="form-group">
-                            <label for="name">Nom</label>
+                            <label for="name">Nombre</label>
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Correu electrònic</label>
+                            <label for="email">Correo electrónico</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Missatge</label>
+                            <label for="message">Mensaje</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Enviar Missatge</button>
+                        <button type="submit" class="btn">Enviar Mensaje</button>
                     </form>
+                    <div id="form-confirmation" style="display:none; margin-top: 1.5rem; text-align: center; color: #333; font-weight: 500;">
+                        <p>¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.</p>
+                    </div>
                 </div>
             </section>
         </div>

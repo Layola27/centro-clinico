@@ -1,34 +1,55 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Contact Form Handler
     const contactForm = document.getElementById('contact-form');
+    const formConfirmation = document.getElementById('form-confirmation');
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
 
-            // Form submission simulation
-            console.log('Nombre:', name);
-            console.log('Email:', email);
-            console.log('Mensaje:', message);
+            const formData = new FormData(contactForm);
 
-            alert('Gràcies pel teu missatge. Ens posarem en contacte amb tu aviat.');
-            contactForm.reset();
+            fetch('send_email.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(text => {
+                formConfirmation.innerHTML = `<p>${text}</p>`;
+                contactForm.style.display = 'none';
+                formConfirmation.style.display = 'block';
+
+                // Optional: Reset the form after a delay
+                setTimeout(() => {
+                    contactForm.reset();
+                    contactForm.style.display = 'block';
+                    formConfirmation.style.display = 'none';
+                }, 5000); // 5 seconds
+
+                // --- Google Ads Conversion Tracking Placeholder ---
+                // Replace 'AW-XXXXXXXXX/YYYYYYYYY' with your actual conversion ID and label
+                // gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX/YYYYYYYYY'});
+                // --------------------------------------------------
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                formConfirmation.innerHTML = `<p>Oops! Algo salió mal. No se pudo enviar tu mensaje.</p>`;
+                contactForm.style.display = 'none';
+                formConfirmation.style.display = 'block';
+            });
         });
     }
 
     // Leaflet Map Initialization
     const mapElement = document.getElementById('map');
     if (mapElement) {
-        const map = L.map('map').setView([41.3800, 2.0720], 15);
+        const map = L.map('map').setView([41.3745, 2.0805], 15);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        L.marker([41.3800, 2.0720]).addTo(map)
-            .bindPopup('<b>Bmedik</b><br>Carrer de Carolina Catasús i Bosch, 7')
+        L.marker([41.3745, 2.0805]).addTo(map)
+            .bindPopup('<b>BMEDIK</b><br>Carrer Josep Campreciós, 12-14')
             .openPopup();
     }
 
