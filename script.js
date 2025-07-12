@@ -54,31 +54,50 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Smooth Scrolling for Navigation Links
-    document.querySelectorAll('header nav a').forEach(anchor => {
+    document.querySelectorAll('header a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            let target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
 
             // Close mobile menu after clicking a link
-            const navLinks = document.querySelector('.nav-links');
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
+            const navMobile = document.querySelector('.nav-links-mobile');
+            if (navMobile.classList.contains('active')) {
+                navMobile.classList.remove('active');
+                hamburger.classList.remove('active'); // Optional: for hamburger animation
             }
         });
     });
 
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const navMobile = document.querySelector('.nav-links-mobile');
 
-    if (hamburger && navLinks) {
+    if (hamburger && navMobile) {
         hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            navMobile.classList.toggle('active');
+            hamburger.classList.toggle('active'); // Optional: for hamburger animation
         });
     }
+
+    // Header scroll effect
+    const header = document.querySelector('header');
+    const logoImg = document.querySelector('.logo img');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+            logoImg.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+            logoImg.classList.remove('scrolled');
+        }
+    });
 
     // Fade-in sections on scroll
     const sections = document.querySelectorAll('section');
@@ -101,24 +120,5 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionObserver.observe(section);
     });
 
-    // Back to Top Button
-    const backToTopButton = document.createElement('button');
-    backToTopButton.classList.add('back-to-top');
-    backToTopButton.innerHTML = '&#9650;'; // Up arrow
-    document.body.appendChild(backToTopButton);
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) { // Show button after scrolling 300px
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    });
-
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+    
 });
