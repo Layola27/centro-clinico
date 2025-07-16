@@ -25,10 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     formConfirmation.style.display = 'none';
                 }, 5000); // 5 seconds
 
-                // --- Google Ads Conversion Tracking Placeholder ---
-                // Replace 'AW-XXXXXXXXX/YYYYYYYYY' with your actual conversion ID and label
-                // gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX/YYYYYYYYY'});
-                // --------------------------------------------------
+                
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -42,13 +39,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Leaflet Map Initialization
     const mapElement = document.getElementById('map');
     if (mapElement) {
-        const map = L.map('map').setView([41.3745, 2.0805], 15);
+        const map = L.map('map').setView([41.376919, 2.085957], 15);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        L.marker([41.3745, 2.0805]).addTo(map)
+        L.marker([41.376919, 2.085957]).addTo(map)
             .bindPopup('<b>BMEDIK</b><br>Carrer Josep Campreciós, 12-14')
             .openPopup();
     }
@@ -88,16 +85,42 @@ document.addEventListener('DOMContentLoaded', function() {
     // Header scroll effect
     const header = document.querySelector('header');
     const logoImg = document.querySelector('.logo img');
+    const backToTopButton = document.querySelector('.back-to-top');
 
     window.addEventListener('scroll', () => {
+        // Header effects
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
-            logoImg.classList.add('scrolled');
+            if (logoImg) {
+                logoImg.classList.add('scrolled');
+            }
         } else {
             header.classList.remove('scrolled');
-            logoImg.classList.remove('scrolled');
+            if (logoImg) {
+                logoImg.classList.remove('scrolled');
+            }
+        }
+
+        // Back to top button visibility
+        if (backToTopButton) {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
         }
     });
+
+    // Back to Top Button Click
+    if (backToTopButton) {
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     // Fade-in sections on scroll
     const sections = document.querySelectorAll('section');
@@ -119,6 +142,4 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
-
-    
 });
